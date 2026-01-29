@@ -1,24 +1,28 @@
-# 🎙️ DubFlow - AI-Powered YouTube Video Dubbing
+# 🎙️ YouTube Dubber - AI-Powered YouTube Video Dubbing
 
-Transform any YouTube video into multiple languages with AI-powered dubbing technology. DubFlow automatically extracts transcripts, translates content, generates natural-sounding speech, and creates professionally dubbed videos.
+Transform any YouTube video into multiple languages with AI-powered dubbing technology. YouTube Dubber automatically extracts transcripts, translates content, generates natural-sounding speech, and creates professionally dubbed videos.
 
-![DubFlow Demo](https://img.shields.io/badge/Status-Active-brightgreen) ![Node.js](https://img.shields.io/badge/Node.js-v18+-blue) ![Next.js](https://img.shields.io/badge/Next.js-v13+-black) 
+![YouTube Dubber Demo](https://img.shields.io/badge/Status-Active-brightgreen) ![Node.js](https://img.shields.io/badge/Node.js-v18+-blue) ![Next.js](https://img.shields.io/badge/Next.js-v13+-black)
+
 ### 🏠 Home Page
+
 ![HomePage](images/Screenshot%202025-06-08%20162120.png)
 
 ### 🎬 Dubbing a YouTube Video
+
 ![Dubbing a YouTube video](images/Screenshot%202025-06-08%20162211.png)
 
 ### 🌐 Language Selection
+
 ![Language Selection](images/Screenshot%202025-06-08%20162227.png)
 
 ### ⚙️ Processing
+
 ![Processing](images/Screenshot%202025-06-08%20162256.png)
 
 ### 📺 Dubbed Video Display
+
 ![Dubbed Video display](images/Screenshot%202025-06-08%20162539.png)
-
-
 
 ## ✨ Features
 
@@ -53,6 +57,7 @@ Transform any YouTube video into multiple languages with AI-powered dubbing tech
 ## 🏗️ Architecture
 
 ### Backend (Node.js/Express)
+
 - **Transcript Extraction**: Enhanced retry logic with multiple fallback methods
 - **Translation Service**: RapidAPI Google Translator integration
 - **Audio Processing**: FFmpeg for audio manipulation and merging
@@ -60,6 +65,7 @@ Transform any YouTube video into multiple languages with AI-powered dubbing tech
 - **Text-to-Speech**: Google TTS (gTTS) for natural voice generation
 
 ### Frontend (Next.js/React)
+
 - **Modern UI**: Tailwind CSS with gradient animations
 - **Real-time Updates**: Live progress tracking and status updates
 - **Responsive Design**: Mobile-first approach with beautiful animations
@@ -78,44 +84,50 @@ Transform any YouTube video into multiple languages with AI-powered dubbing tech
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
-   git clone https://github.com/yourusername/dubflow.git
-   cd dubflow
+   git clone https://github.com/bh2619-k/YouTube-Dubber.git
+   cd YouTube-Dubber
    ```
 
 2. **Install backend dependencies**
+
    ```bash
    cd backend
    npm install
    ```
 
 3. **Install frontend dependencies**
+
    ```bash
    cd ../frontend
    npm install
    ```
 
 4. **Set up environment variables**
-   
+
    Create a `.env` file in the backend directory:
+
    ```env
    PORT=3001
    RAPIDAPI_KEY=your_rapidapi_key_here
    ```
 
 5. **Install system dependencies**
-   
+
    **On macOS:**
+
    ```bash
    brew install ffmpeg yt-dlp
    ```
-   
+
    **On Ubuntu/Debian:**
+
    ```bash
    sudo apt update
    sudo apt install ffmpeg yt-dlp
    ```
-   
+
    **On Windows:**
    - Download FFmpeg from https://ffmpeg.org/download.html
    - Download yt-dlp from https://github.com/yt-dlp/yt-dlp
@@ -123,17 +135,21 @@ Transform any YouTube video into multiple languages with AI-powered dubbing tech
 ### Running the Application
 
 1. **Start the backend server**
+
    ```bash
    cd backend
    npm start
    ```
+
    The backend will run on http://localhost:3001
 
 2. **Start the frontend development server**
+
    ```bash
    cd frontend
    npm run dev
    ```
+
    The frontend will run on http://localhost:3000
 
 3. **Open your browser** and navigate to http://localhost:3000
@@ -141,9 +157,11 @@ Transform any YouTube video into multiple languages with AI-powered dubbing tech
 ## 📚 API Documentation
 
 ### POST /api/dub-video
+
 Processes a YouTube video for dubbing.
 
 **Request Body:**
+
 ```json
 {
   "videoUrl": "https://www.youtube.com/watch?v=VIDEO_ID",
@@ -152,6 +170,7 @@ Processes a YouTube video for dubbing.
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -164,9 +183,11 @@ Processes a YouTube video for dubbing.
 ```
 
 ### POST /api/check-transcript
+
 Validates transcript availability before processing.
 
 **Request Body:**
+
 ```json
 {
   "videoUrl": "https://www.youtube.com/watch?v=VIDEO_ID"
@@ -174,9 +195,11 @@ Validates transcript availability before processing.
 ```
 
 ### GET /api/job-status/:jobId
+
 Checks the status of a dubbing job.
 
 **Response:**
+
 ```json
 {
   "status": "completed",
@@ -185,16 +208,17 @@ Checks the status of a dubbing job.
 ```
 
 ### GET /api/health
+
 Health check endpoint.
 
 ## 🔧 Configuration
 
 ### Environment Variables
 
-| Variable | Description | Required | Default |
-|----------|-------------|----------|---------|
-| `PORT` | Backend server port | No | 3001 |
-| `RAPIDAPI_KEY` | RapidAPI key for Google Translator | Yes | - |
+| Variable       | Description                        | Required | Default |
+| -------------- | ---------------------------------- | -------- | ------- |
+| `PORT`         | Backend server port                | No       | 3001    |
+| `RAPIDAPI_KEY` | RapidAPI key for Google Translator | Yes      | -       |
 
 ### Customization Options
 
@@ -239,6 +263,7 @@ The frontend uses Tailwind CSS for styling. Key customization options:
 ### Debug Mode
 
 Enable debug logging by setting:
+
 ```env
 DEBUG=true
 ```
@@ -271,7 +296,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [FFmpeg](https://ffmpeg.org/) for video/audio processing
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) for reliable YouTube downloads
 - [Google TTS](https://github.com/zlargon/google-tts) for speech synthesis
-
-
 
 **Made with ❤️ for content creators worldwide**
